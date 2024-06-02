@@ -1,0 +1,284 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+
+/* NAV STYLING */
+
+nav {
+    background-color: #2388e7;
+    display: flex;
+    justify-content: space-between;
+    font-size: larger;
+    height: 70px;
+}
+
+a, a:link, a:hover, a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+nav li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+#nav-right ul {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#nav-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    margin-left: 30px;
+}
+
+nav.active #nav-right ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    right: 0;
+    background-color: #2388e7;
+    width: 100%;
+    height: calc(100vh - 70px);
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+
+/* HEADER STYLING */
+
+header {
+    height: 590px;
+    width: 100%;
+    background-image: url("media/banner.png");
+    background-size: contain;
+    background-repeat: round;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 500%;
+}
+
+header div {
+    border: 1px white solid;
+    font-size: 300%;
+    padding: 20px;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+header a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+}
+
+
+/* MAIN STYLING */
+
+main {
+    background-color: #2388e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    height: 280px;
+}
+
+main ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+main li {
+    list-style-type: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-right: 35px;
+    margin-bottom: 5px;
+}
+
+main .content-top {
+    margin: 0 0 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+main img {
+    height: 50px;
+    width: auto;
+}
+
+main span {
+    margin-bottom: 10px;
+}
+
+footer {
+    background-color: rgb(55, 60, 66);
+    height: 130px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+footer p {
+    margin-right: 100px;
+}
+
+footer #impressum-button {
+    margin-left: 100px;
+}
+
+footer a[href="https://lgall.carrd.co/"] {
+    color: #2388e7;
+}
+
+
+/* POPUP STYLING */
+
+.popup {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+
+.popup-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 600px;
+    color: black;
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.popup-content {
+    border-radius: 15px;
+}
+
+.popup {
+    a, a:link, a:hover, a:visited {
+        text-decoration: none;
+        color: #2388e7;
+    }
+}
+
+
+/* RESPONSIVE DESIGN */
+
+
+
+@media screen and (max-width: 1026px) {
+    header {
+        height: 390px;
+        width: 100%;
+        background-repeat: space;
+        background-size: 150%;
+        
+    }
+
+    header h1 {
+        display: none;
+    }
+
+    main {
+        height: 326px;
+    }
+
+}
+
+
+@media screen and (max-width: 768px) {
+    
+
+    header {
+        height: 197px;
+        background-repeat: space;
+    }
+
+    main ul {
+        flex-direction: column;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        margin: 0;
+
+        li {
+            margin: 10px 0 0;
+        }
+    }
+
+    main {
+        height: 580px;
+    }
+
+
+    #contact-button {
+        display: none;
+    }
+
+    #documents-button {
+        
+    }
+
+    footer {
+        align-items: center;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+
+        a,p {
+            margin-left: 0;
+            margin-right: 0;
+        }
+
+        #impressum-button {
+            margin: 0;
+        }
+    }
+}
